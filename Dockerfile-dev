@@ -1,0 +1,7 @@
+FROM alpine:latest
+WORKDIR /opt/scripts
+COPY ./scripts/* ./
+RUN apk update \
+&& apk add tzdata mongodb-tools \
+&& chmod +x start.sh
+CMD /opt/scripts/start.sh
